@@ -8,4 +8,4 @@ set(SOURCE_FILES
         count_inversions.cpp
         )
 
-add_library(counting_inversions_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
+add_library(count_inversions_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})

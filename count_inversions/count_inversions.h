@@ -8,8 +8,16 @@
 #include <vector>
 
 namespace count_inversions {
-    std::pair<int, std::vector<int>> countInversions(const std::vector<int> &vec);
-    std::pair<int, std::vector<int>> countInversionsAndMerge(const std::vector<int> &vec1, const std::vector<int> &vec2);
-    int count(const std::vector<int> &vec);
+    namespace fast {
+        std::pair<unsigned long, std::vector<int>> countInversions(const std::vector<int> &vec);
+
+        std::pair<unsigned long, std::vector<int>>
+        countInversionsAndMerge(const std::vector<int> &vec1, const std::vector<int> &vec2);
+
+        unsigned long count(const std::vector<int> &vec);
+    }
+    namespace slow {
+        unsigned long count(const std::vector<int> &vec);
+    }
 }
 #endif //ASSIGNMENTS_COUNT_INVERSIONS_H
