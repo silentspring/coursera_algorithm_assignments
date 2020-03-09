@@ -3,8 +3,9 @@ project(assignments)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(number_multiply common)
-add_subdirectory(Google_tests )
+include_directories(common number_multiply count_inversions)
+add_subdirectory(Google_tests)
 add_subdirectory(common)
 add_subdirectory(number_multiply)
+add_subdirectory(count_inversions)
 
