@@ -31,14 +31,15 @@ TEST(count_inversions_test, fast) {
 }
 
 #include <fstream>
-void collectData(const std::string &file, std::vector<int> &vec)
-{
-    std::ifstream ifs(file);
-    vec.reserve(1000000);
-    int num;
-    int i = 0;
-    while (ifs >> num) {
-        vec.push_back(num);
+namespace {
+    void collectData(const std::string &file, std::vector<int> &vec) {
+        std::ifstream ifs(file);
+        vec.reserve(1000000);
+        int num;
+        int i = 0;
+        while (ifs >> num) {
+            vec.push_back(num);
+        }
     }
 }
 
