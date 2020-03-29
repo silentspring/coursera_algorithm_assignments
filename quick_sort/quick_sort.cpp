@@ -116,6 +116,9 @@ namespace quick_sort {
     int PartitionWildMiddle::partition(std::vector<int> &vec, PivotPolicy policy, int start, int end, int &cnt_compare)
     {
         if (start < 0 || end >= vec.size() || start > end) { throw 999; }
+        if (start == end) {
+            return start;
+        }
         cnt_compare += end - start;
         int ret = -1;
         int pivot = getPivot(vec, policy, start, end);
