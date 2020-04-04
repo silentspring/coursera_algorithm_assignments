@@ -2,8 +2,8 @@
 // Created by yhzhan on 3/23/2020.
 //
 
-#ifndef ASSIGNMENTS_QUICK_SORT_H
-#define ASSIGNMENTS_QUICK_SORT_H
+#ifndef QUICK_SORT_H
+#define QUICK_SORT_H
 
 #include <iostream>
 #include <vector>
@@ -53,4 +53,4 @@ namespace quick_sort {
     void quickSortImpl(std::vector<int> &vec, PivotPolicy policy, int start, int end, int &cnt_compare);
     void quickSort(std::vector<int> &vec, PivotPolicy policy, int &cnt_compare);
 }
-#endif //ASSIGNMENTS_QUICK_SORT_H
+#endif //QUICK_SORT_H
