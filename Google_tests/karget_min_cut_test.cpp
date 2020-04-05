@@ -25,8 +25,63 @@ The file contains the adjacency list representation of a simple undirected graph
 */
 
 using namespace min_cut;
+TEST(min_cut, test_lambda) {
+    std::vector<Node> vec{Node(1),Node(2),Node(3),Node(4),Node(5),Node(6)};
+    int target(4);
+    auto it = std::find_if(vec.begin(), vec.end(), [&](const Node &node) { return node.getId() == target; });
+    std::cout << "found [" << *it << "]" << std::endl;
+}
+
+TEST(min_cut, test_remove_if) {
+    Node node(1);
+    node.addAdj(2);
+    node.addAdj(2);
+    node.addAdj(3);
+    node.addAdj(3);
+    node.addAdj(4);
+    node.addAdj(4);
+    node.removeAdj(3);
+    EXPECT_EQ(node.adjs(), std::vector<int>({2, 2, 4, 4}));
+}
+
+TEST(min_cut, test_mergeAdj) {
+    Node node1(1);
+    node1.addAdj(2);
+    node1.addAdj(3);
+    node1.addAdj(4);
+    EXPECT_EQ(node1.adjs(), std::vector<int>({2, 3, 4}));
+    Node node2 = node1;
+    Node newNode(3);
+    newNode.mergeAdjs(node1);
+    EXPECT_EQ(newNode.adjs(), std::vector<int>({2, 3, 4}));
+    newNode.mergeAdjs(node2);
+    EXPECT_EQ(newNode.adjs(), std::vector<int>({2, 3, 4, 2, 3, 4}));
+}
+
+TEST(min_cut, test_replaceAdj) {
+    Node node1(1);
+    node1.addAdj(2);
+    node1.addAdj(2);
+    node1.addAdj(3);
+    node1.addAdj(3);
+    node1.addAdj(4);
+    node1.addAdj(4);
+    node1.replaceAdj(3,5);
+    EXPECT_EQ(node1.adjs(), std::vector<int>({2, 2, 5, 5, 4, 4}));
+}
+
 TEST(min_cut, coursera_case) {
     AdjList list("../../Google_tests/KargerMinCut.txt");
     // std::cout << list << std::endl;
     std::cout << "has parallel edges [" << list.hasParallelEdges() << "]" << std::endl;
+
+    int minMinCut = std::numeric_limits<int>::max();
+    for (int i = 1; i <= 1000; ++i) {
+        int minCut = list.minCut();
+        std::cout << "iteration [" << i << "] min_cut [" << minCut << "]" << std::endl;
+        if (minCut < minMinCut) {
+            minMinCut = minCut;
+        }
+    }
+    std::cout << "Final min(minCut) [" << minMinCut << "]" << std::endl;
 }
