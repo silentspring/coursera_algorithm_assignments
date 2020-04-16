@@ -35,14 +35,12 @@ Could you solve it with constant space complexity? (The output array does not co
             }
             product = 1;
             for (int i = sz-1; i >= 0;  --i) {
-                std::cout << "i [" << i << "]" << std::endl;
                 if (i == sz-1) {
                     leftToRight[i] = leftToRight[i - 1];
                 } else if (i == 0) {
                     leftToRight[i] = product;
                 } else {
                     leftToRight[i] = leftToRight[i-1] * product;
-                    std::cout << "i " << i << " leftToRight[i-i] " << leftToRight[i-i] << " * product " << product << " = " << leftToRight[i] << std::endl;
                 }
                 product *= nums[i];
             }
