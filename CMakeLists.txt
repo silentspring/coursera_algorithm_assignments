@@ -4,7 +4,8 @@ project(assignments)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(common number_multiply count_inversions second_largest_number quick_sort ith_smallest min_cut
-        unimodal_search backspace_process min_stack tree_diameter contiguous_array string_shift)
+        unimodal_search backspace_process min_stack tree_diameter contiguous_array string_shift
+        product_except_current)
 add_subdirectory(Google_tests)
 add_subdirectory(common)
 add_subdirectory(number_multiply)
@@ -19,4 +20,5 @@ add_subdirectory(min_stack)
 add_subdirectory(tree_diameter)
 add_subdirectory(contiguous_array)
 add_subdirectory(string_shift)
+add_subdirectory(product_except_current)
 
