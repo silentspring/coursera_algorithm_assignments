@@ -1,4 +1,4 @@
-project(counting_inversions_lib)
+project(quick_sort_lib)
 
 set(HEADER_FILES
         quick_sort.h

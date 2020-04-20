@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(common number_multiply count_inversions second_largest_number quick_sort ith_smallest min_cut
         unimodal_search backspace_process min_stack tree_diameter contiguous_array string_shift
-        product_except_current valid_parenthesis_string num_islands min_sum_path)
+        product_except_current valid_parenthesis_string num_islands min_sum_path search_in_rotated_sorted_array)
 add_subdirectory(Google_tests)
 add_subdirectory(common)
 add_subdirectory(number_multiply)
@@ -24,4 +24,5 @@ add_subdirectory(product_except_current)
 add_subdirectory(valid_parenthesis_string)
 add_subdirectory(num_islands)
 add_subdirectory(min_sum_path)
+add_subdirectory(search_in_rotated_sorted_array)
 
